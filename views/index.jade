@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div
+    h1.title Translate Stuff to Lithuanian!
+  #translation-input-area
+    span.instruction Enter a phrase in English below...
+    #input-container
+      textarea(id="transl-input" name="transl-input" rows="3") Hello, world!
+      .buttons
+        button(class="clear-input") Reset
+        button(id="transl-button") Get Translation
+  #translation-output-area
+    span.instruction ...and see it here in Lithuanian!
+    #output-container
+      
+    

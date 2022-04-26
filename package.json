@@ -1,0 +1,27 @@
+{
+  "name": "microservice-express",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon node ./bin/www",
+    "transl": "node ./public/javascripts/translate.js",
+    "tts": "node ./public/javascripts/speechsynthesis.js",
+    "test": "node ./public/javascripts/testing.js"
+  },
+  "dependencies": {
+    "@google-cloud/translate": "^6.3.1",
+    "axios": "^0.26.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.0",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "microsoft-cognitiveservices-speech-sdk": "^1.21.0",
+    "morgan": "~1.9.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
