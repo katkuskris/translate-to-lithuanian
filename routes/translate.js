@@ -12,6 +12,8 @@ var location = process.env.REGION;
 
 
 /* request translation from api */
+// Adapted from Microsoft Translator documentation
+// https://docs.microsoft.com/en-us/azure/cognitive-services/translator/quickstart-translator?tabs=nodejs
 router.post('/', async function (req, res) {
   var translationBody = {
     baseURL: endpoint,
