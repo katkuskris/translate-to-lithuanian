@@ -9,9 +9,9 @@ body {
   color: #494949;
 }
 
-a {
+/* a {
   color: #00b7ff;
-}
+} */
 
 #input-container {
   display: flex;
@@ -41,6 +41,7 @@ textarea {
   padding: 1em 2em;
   border-radius: 0.75em 0.75em 0 0;
   width: 100%;
+  margin-top: 1em;
 }
 
 #translation-output-area {

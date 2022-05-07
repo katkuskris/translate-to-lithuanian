@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  #translation-input-area
+    span.instruction Enter a verb
+    input(type="text") 
+    span.instruction to see its conjugated forms!
+    .buttons
+      button(class="clear-input") Reset
+      button(id="transl-button") Get Conjugation Table
+  #translation-output-area
+    span.instruction ...and see it here in Lithuanian!
+    #output-container
+      
+    

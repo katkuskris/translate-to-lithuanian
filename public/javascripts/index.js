@@ -14,7 +14,7 @@ const requestTTS = async (event, phrase) => {
 const requestTranslate = async (event) => {
     event.preventDefault()
     let phrase = document.querySelector("#transl-input").value
-    await fetch(`/translate`, {
+    await fetch(`/translator`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ const clearTextInput = (event) => {
     event.preventDefault();
     let textInput = document.querySelector("#transl-input")
     let textOutput = document.querySelector("#output-container")
-    textInput.innerHTML = ""
+    textInput.value = ""
     textOutput.innerHTML = ""
 
 }
@@ -41,6 +41,12 @@ const clearTextInput = (event) => {
 window.onload = async function () {
     let translButton = document.querySelector("#transl-button")
     translButton.addEventListener("click", requestTranslate)
+    let translInput = document.querySelector("#transl-input")
+    translInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            requestTranslate(e)
+        }
+    })
     let clearInput = document.querySelector(".clear-input")
     clearInput.addEventListener("click", clearTextInput)
 }
