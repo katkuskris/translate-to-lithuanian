@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var translateApiRouter = require('./routes/translate');
-var conjugatorRouter = require('./routes/conjugator');
+// var conjugatorRouter = require('./routes/conjugator');
 
 var app = express();
 
@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/translate', translateApiRouter);
-app.use('/conjugator', conjugatorRouter);
+// app.use('/conjugator', conjugatorRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
