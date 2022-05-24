@@ -102,3 +102,15 @@ textarea {
   border: 0px;
   font: 1.25em 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
+
+.choose-languages {
+  flex-grow: 1;
+  color: #494949;
+  padding: 0.5em;
+  margin: 0.5em 0.5em 0.5em 0;
+  background-color: #c5d6e4;
+  text-align: center;
+  border-radius: 0.25em;
+  border: 0px;
+  font: 1.25em 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
+}

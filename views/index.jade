@@ -1,5 +1,8 @@
 extends layout
 
+block scripts
+  script(src='javascripts/index.js')
+
 block content
   #translation-input-area
     span.instruction Enter a phrase in English below...
@@ -7,9 +10,11 @@ block content
       textarea(id="transl-input" name="transl-input" rows="3") Hello, world!
       .buttons
         button(class="clear-input") Reset
+        a(href="http://localhost:5000")
+          button(class="choose-languages") Languages
         button(id="transl-button") Get Translation
   #translation-output-area
-    span.instruction ...and see it here in Lithuanian!
+    span.instruction ...and see it here in #{language}!
     #output-container
       
     

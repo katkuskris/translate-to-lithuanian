@@ -4,12 +4,12 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia")
-    script(src='javascripts/index.js')
-        script(src='javascripts/translate.js')
+    block scripts
+    //- script(src=script)
   body
     h1= title
-    //- a(href="/conjugator") Conjugator
-    //- a(href="/") Translator
+    a(href="/conjugator") Conjugator
+    a(href="/") Translator
     block content
     block footer
     block verb

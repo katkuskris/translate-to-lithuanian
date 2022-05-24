@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const axios = require('axios').default;
+const language = require('../text_chooser.json');
+const languageCode = require('../language-codes.json');
 const { v4: uuidv4 } = require('uuid');
 require('dotenv').config();
 var sdk = require("microsoft-cognitiveservices-speech-sdk");
@@ -26,7 +28,7 @@ router.post('/translator', async function (req, res) {
     params: {
       'api-version': '3.0',
       // 'from': 'en',
-      'to': 'lt'
+      'to': languageCode[language]
     },
     data: [{
       'text': req.body.phrase
@@ -76,7 +78,7 @@ router.post('/tts', async function (req, res) {
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Lithuanian Translation Tool' });
+  res.render('index', { title: `${language} Translation Tool`, language: language });
 });
 
 module.exports = router;
