@@ -4,15 +4,15 @@ block scripts
   script(src='javascripts/conjugator.js')
 
 block content
-  #translation-input-area
-    span.instruction Enter a verb
-    input(id="conj-input" name="conj-input" type="text") 
-    span.instruction to see its conjugated forms!
+  #conj-input-area
+    #conj-instructions
+      span.instruction Enter a verb
+      input(id="conj-input" name="conj-input" type="text") 
+      span.instruction to see its conjugated forms!
     .buttons
       button(class="clear-input") Reset
       button(id="conj-button") Get Conjugation Table
-  #translation-output-area
+  #conj-output-area
     span.instruction ...and see it here in Lithuanian!
     #output-container
-      
     

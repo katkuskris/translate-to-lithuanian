@@ -34,7 +34,8 @@ textarea {
   color: whitesmoke;
 }
 
-#translation-input-area {
+#translation-input-area,
+#conj-input-area {
   display: flex;
   flex-direction: column;
   background-color: #d96459;
@@ -44,7 +45,8 @@ textarea {
   margin-top: 1em;
 }
 
-#translation-output-area {
+#translation-output-area,
+#conj-output-area {
   display: flex;
   flex-direction: column;
   background-color: #5c8d76;
@@ -54,6 +56,8 @@ textarea {
 }
 
 #output-container {
+  display: flex;
+  flex-direction: column;
   background-color: #d4e7dd;
   color: #494949;
   padding: 1em;
@@ -68,7 +72,8 @@ textarea {
   margin: 0.25em 0;
 }
 
-#transl-button {
+#transl-button,
+#conj-button {
   flex-grow: 8;
   color: #494949;
   padding: 0.5em;
@@ -113,4 +118,42 @@ textarea {
   border-radius: 0.25em;
   border: 0px;
   font: 1.25em 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+.conj-table {
+  border-spacing: 0px;
+  font-size: 1.5em;
+  padding-bottom: 1.5em;
+}
+
+.conj-table thead,
+.conj-table .person {
+  font-weight: 700;
+}
+
+.conj-table td {
+  color: #494949;
+  border-bottom: 1px solid #494949;
+  padding: 0.25em 0.5em;
+}
+
+#conj-input {
+  width: 150px;
+  padding: 0.25em;
+  font-size: 1.25em;
+  color: #494949;
+  background-color: whitesmoke;
+  border-radius: 0.25em;
+  font: 1.25em 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
+  margin: 0 0.5em;
+}
+
+#conj-instructions {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0.5em;
+}
+
+.nav a {
+  padding: 0.5em;
 }

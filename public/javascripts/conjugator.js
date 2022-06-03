@@ -1,5 +1,6 @@
 const requestConjugate = async (event) => {
     event.preventDefault()
+    let outputContainer = document.querySelector("#output-container")
     let verb = document.querySelector("#conj-input").value
     console.log("here is the phrase:", verb)
     await fetch(`/conjugator`, {
@@ -9,14 +10,8 @@ const requestConjugate = async (event) => {
         },
         body: JSON.stringify({ "verb": verb })
     })
-        .then(response => response.json())
-        .then(data => displayConj(data.verb));
-}
-
-const displayConj = (verb) => {
-    outputContainer = document.querySelector("#output-container")
-    outputContainer.append = `h1 My Site`
-    console.log(test)
+        .then(response => response.text())
+        .then(data => outputContainer.innerHTML = data);
 }
 
 window.onload = async function () {

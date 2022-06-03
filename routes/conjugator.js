@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var Verb = require('./conjugatorTool')
-
+var verbs = require('../verbs.json')
+var tables = require('../views/conjugationTable')
 
 /* GET conjugator page. */
 router.get('/', function (req, res, next) {
@@ -9,13 +10,18 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
+  // need to error-proof this!
   console.log("body:", req.body)
-  let verb = req.body.verb
-  res.send({ verb: new Verb(verb) });
-});
+  res.setHeader('Content-Type', 'text/html');
+  if (Object.keys(verbs).includes(req.body.verb)) {
+    let verb = new Verb(req.body.verb)
+    console.log("i'm in here!")
+    res.status(200).send(tables(verb));
+  } else {
+    res.status(500)
+  }
 
-// var testVerb = new Verb('daryti')
-// console.log(testVerb)
+});
 
 module.exports = router;
 
