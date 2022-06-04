@@ -81,7 +81,6 @@ class Verb {
         return this.inf.slice(-1) == "s" ? true : false
     }
 
-    // Not providing correct reflexives
     #zip(root, endings) {
         let forms = []
         for (let i = 0; i < endings.length; i++) {
@@ -92,8 +91,6 @@ class Verb {
             let reflexiveEndings = ["si", "si", "si", "s", "s"]
             console.log(root, endings)
             for (let i = 0; i < reflexiveEndings.length; i++) {
-                // if ((i == 3 || i == 4) & forms[i].slice(-1) == 'e') {
-                // }
                 forms[i] += reflexiveEndings[i]
             }
         }
@@ -139,7 +136,6 @@ class Verb {
             let root = this.basicPast.slice(0, this.basicPast.length - 1)
             return [root + "iau", root + "ei", root + "ė", root + "ėme", root + "ėte"]
         } else {
-            // reflexive verbs need working
             return ["broken", "broken", "broken", "broken", "broken"]
         }
     }
@@ -147,25 +143,21 @@ class Verb {
     #pastf() {
         let root = this.inf.slice(0, this.inf.length - 2)
         return [root + "davo", root + "davai", root + "davo", root + "davome", root + "davote"]
-        // need reflexive verbs
     }
 
     #future() {
         let root = this.inf.slice(0, this.inf.length - 2)
         return [root + "siu", root + "si", root + "s", root + "sime", root + "site"]
-        // need reflexive verbs
     }
 
     #subj() {
         let root = this.inf.slice(0, this.inf.length - 2)
         return [root + "čiau", root + "tum", root + "tų", root + "tume", root + "tute"]
-        // need reflexive verbs
     }
 
     #imp() {
         let root = this.inf.slice(0, this.inf.length - 2)
         return [root + "k", root + "kime", root + "kite"]
-        // need reflexive verbs
     }
 }
 

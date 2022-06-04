@@ -6,6 +6,7 @@ const languageCode = require('../language-codes.json');
 const { v4: uuidv4 } = require('uuid');
 require('dotenv').config();
 var sdk = require("microsoft-cognitiveservices-speech-sdk");
+var path = require('path');
 
 var subscriptionKey = process.env.TRANSLATION_KEY;
 var endpoint = "https://api.cognitive.microsofttranslator.com";
@@ -27,7 +28,6 @@ router.post('/translator', async function (req, res) {
     },
     params: {
       'api-version': '3.0',
-      // 'from': 'en',
       'to': languageCode[language]
     },
     data: [{
@@ -45,7 +45,7 @@ router.post('/translator', async function (req, res) {
 router.post('/tts', async function (req, res) {
   var key = process.env.TTS_KEY;
   var region = process.env.REGION;
-  var audioFile = "spech.wav";
+  var audioFile = path.join(__dirname, '../public/audio/speechOutput.wav');
 
   const speechConfig = sdk.SpeechConfig.fromSubscription(key, region);
   const audioConfig = sdk.AudioConfig.fromAudioFileOutput(audioFile);
@@ -75,8 +75,6 @@ router.post('/tts', async function (req, res) {
   console.log("Now synthesizing to: " + audioFile);
 })
 
-
-/* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { title: `${language} Translation Tool`, language: language });
 });

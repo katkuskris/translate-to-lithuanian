@@ -3,14 +3,15 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href="https://fonts.googleapis.com/icon?family=Material+Icons")
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia")
     block scripts
     //- script(src=script)
   body
     h1= title
     .nav
-      a(href="/conjugator") Conjugator
-      a(href="/") Translator
+      a.nav-link(href="/") Translator
+      a.nav-link(href="/conjugator") Conjugator
     block content
     block footer
     block verb

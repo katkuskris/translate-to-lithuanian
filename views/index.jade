@@ -7,14 +7,22 @@ block content
   #translation-input-area
     span.instruction Enter a phrase in English below...
     #input-container
-      textarea(id="transl-input" name="transl-input" rows="3") Hello, world!
+      textarea#transl-input(name="transl-input" rows="3") Hello, world!
       .buttons
-        button(class="clear-input") Reset
+        button.clear-input Reset
         a(href="http://localhost:5000")
-          button(class="choose-languages") Languages
-        button(id="transl-button") Get Translation
+          button.choose-languages Languages
+        button#transl-button Get Translation
   #translation-output-area
-    span.instruction ...and see it here in #{language}!
+    .output-header
+      span.instruction ...and see it here in #{language}!
+      div
+        button.tts-button#copy-button
+          span.material-icons.md-24 content_copy
+        button.tts-button#download-button
+          span.material-icons.md-24 download
+        button.tts-button#play-button
+          spanspan.material-icons.md-24 volume_up
     #output-container
       
     

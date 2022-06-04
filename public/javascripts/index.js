@@ -1,6 +1,28 @@
+const addClickListener = (selector, func) => {
+    let selected = document.querySelector(selector)
+    selected.addEventListener("click", func)
+}
+
+const activateButtons = () => {
+    for (let button of document.querySelectorAll('.tts-button')) {
+        button.className = 'tts-button-active'
+    }
+    addClickListener("#copy-button", copyOutput)
+    addClickListener("#download-button", downloadOutput)
+    addClickListener("#play-button", playOutput)
+}
+
+const deactivateButtons = () => {
+    for (let button of document.querySelectorAll('.tts-button-active')) {
+        button.className = 'tts-button'
+    }
+    document.querySelector("#copy-button").removeEventListener("click", copyOutput)
+    document.querySelector("#download-button").removeEventListener("click", downloadOutput)
+    document.querySelector("#play-button").removeEventListener("click", playOutput)
+}
+
 const requestTTS = async (event, phrase) => {
     event.preventDefault()
-    console.log("here is the phrase:", phrase)
     await fetch(`/tts`, {
         method: "POST",
         headers: {
@@ -9,7 +31,6 @@ const requestTTS = async (event, phrase) => {
         body: JSON.stringify({ phrase: phrase })
     })
 }
-
 
 const requestTranslate = async (event) => {
     event.preventDefault()
@@ -23,9 +44,10 @@ const requestTranslate = async (event) => {
     })
         .then(response => response.json())
         .then(data => {
-            readyphrase = document.querySelector("#output-container")
-            readyphrase.innerHTML = `<span class="translation-text">${data.translation}</span>`
-            // requestTTS(event, data.translation)
+            let outputContainer = document.querySelector("#output-container")
+            outputContainer.innerHTML = `<span class="translation-text">${data.translation}</span>`
+            requestTTS(event, data.translation)
+            activateButtons()
         })
 }
 
@@ -35,18 +57,33 @@ const clearTextInput = (event) => {
     let textOutput = document.querySelector("#output-container")
     textInput.value = ""
     textOutput.innerHTML = ""
+    deactivateButtons()
+}
 
+const downloadOutput = (event) => {
+    event.preventDefault()
+    window.location.href = "/audio/speechOutput.wav";
+}
+
+const playOutput = (event) => {
+    event.preventDefault()
+    let audio = new Audio("/audio/speechOutput.wav")
+    audio.play()
+}
+
+const copyOutput = (event) => {
+    event.preventDefault()
+    let output = document.querySelector("#output-container").textContent
+    navigator.clipboard.writeText(output);
 }
 
 window.onload = async function () {
-    let translButton = document.querySelector("#transl-button")
-    translButton.addEventListener("click", requestTranslate)
+    addClickListener("#transl-button", requestTranslate)
+    addClickListener(".clear-input", clearTextInput)
     let translInput = document.querySelector("#transl-input")
     translInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
             requestTranslate(e)
         }
     })
-    let clearInput = document.querySelector(".clear-input")
-    clearInput.addEventListener("click", clearTextInput)
 }

@@ -21,13 +21,13 @@ body {
 textarea {
   width: flex;
   border: 0px;
-  padding: 1em;
-  font-size: 1.25em;
+  padding: 1rem;
+  font-size: 1.25rem;
   font-family: 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
   color: #494949;
   background-color: whitesmoke;
-  margin: 0.5em 0;
-  border-radius: 0.25em;
+  margin: 0.5rem 0;
+  border-radius: 0.25rem;
 }
 
 .light {
@@ -39,10 +39,10 @@ textarea {
   display: flex;
   flex-direction: column;
   background-color: #d96459;
-  padding: 1em 2em;
-  border-radius: 0.75em 0.75em 0 0;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem 0.75rem 0 0;
   width: 100%;
-  margin-top: 1em;
+  margin-top: 1rem;
 }
 
 #translation-output-area,
@@ -50,8 +50,8 @@ textarea {
   display: flex;
   flex-direction: column;
   background-color: #5c8d76;
-  padding: 1em 2em;
-  border-radius: 0 0 0.75em 0.75em;
+  padding: 1rem 2rem;
+  border-radius: 0 0 0.75rem 0.75rem;
   width: 100%;
 }
 
@@ -60,33 +60,45 @@ textarea {
   flex-direction: column;
   background-color: #d4e7dd;
   color: #494949;
-  padding: 1em;
+  padding: 1rem;
   min-height: 6em;
-  border-radius: 0.25em;
-  margin: 0.5em 0;
+  border-radius: 0.25rem;
+  margin: 0.5rem 0;
 }
 
 .instruction {
   color: whitesmoke;
-  font-size: 1.5em;
-  margin: 0.25em 0;
+  font-size: 1.5rem;
+  margin: 0.25rem 0;
+}
+
+.nav-link {
+  color: #494949;
+  padding: 0.5rem;
+  margin: 0.25rem;
+  background-color: #fcd47d;
+  border-radius: 0.25rem;
+  border: 0px;
+  text-align: center;
+  font: 1.25rem 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
+  text-decoration: none;
 }
 
 #transl-button,
 #conj-button {
   flex-grow: 8;
   color: #494949;
-  padding: 0.5em;
-  margin: 0.5em 0;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
   background-color: #fcd47d;
-  border-radius: 0.25em;
+  border-radius: 0.25rem;
   border: 0px;
   text-align: center;
-  font: 1.25em 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 1.25rem 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 .translation-text {
-  font-size: 1.25em;
+  font-size: 1.25rem;
   font-family: 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
   color: #494949;
 }
@@ -99,31 +111,31 @@ textarea {
 .clear-input {
   flex-grow: 1;
   color: #494949;
-  padding: 0.5em;
-  margin: 0.5em 0.5em 0.5em 0;
+  padding: 0.5rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
   background-color: #f8c7c3;
   text-align: center;
-  border-radius: 0.25em;
+  border-radius: 0.25rem;
   border: 0px;
-  font: 1.25em 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 1.25rem 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 .choose-languages {
   flex-grow: 1;
   color: #494949;
-  padding: 0.5em;
-  margin: 0.5em 0.5em 0.5em 0;
+  padding: 0.5rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
   background-color: #c5d6e4;
   text-align: center;
-  border-radius: 0.25em;
+  border-radius: 0.25rem;
   border: 0px;
-  font: 1.25em 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 1.25rem 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 .conj-table {
   border-spacing: 0px;
-  font-size: 1.5em;
-  padding-bottom: 1.5em;
+  font-size: 1.25rem;
+  padding-bottom: 1.5rem;
 }
 
 .conj-table thead,
@@ -134,26 +146,55 @@ textarea {
 .conj-table td {
   color: #494949;
   border-bottom: 1px solid #494949;
-  padding: 0.25em 0.5em;
+  padding: 0.25rem 0.5rem;
 }
 
 #conj-input {
   width: 150px;
-  padding: 0.25em;
-  font-size: 1.25em;
+  padding: 0.25rem;
+  font-size: 1.25rem;
   color: #494949;
   background-color: whitesmoke;
-  border-radius: 0.25em;
-  font: 1.25em 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
-  margin: 0 0.5em;
+  border-radius: 0.25rem;
+  font: 1.25rem 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
+  margin: 0 0.5rem;
 }
 
 #conj-instructions {
   display: flex;
   flex-flow: row wrap;
-  margin: 0.5em;
+  margin: 0.5rem;
 }
 
 .nav a {
-  padding: 0.5em;
+  padding: 0.5rem;
+}
+
+.tts-button {
+  background-color: #d4e7dd;
+  color: dimgray;
+  padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+  margin: 0rem 0rem 0rem 0.5rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  border: 0px;
+  font: 1.25rem 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+.tts-button-active {
+  background-color: #d4e7dd;
+  color: royalblue;
+  padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+  margin: 0rem 0rem 0rem 0.5rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  border: 0px;
+  font: 1.25rem 'Lato', 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+.output-header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
 }

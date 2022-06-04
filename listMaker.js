@@ -2,7 +2,6 @@ const verbs = require("./verbs.json")
 const fs = require('fs')
 
 let infinitives = Object.keys(verbs)
-let count = 0
 let indices = []
 for (let verb of infinitives) {
     if (verb.slice(-1) == 's') {
