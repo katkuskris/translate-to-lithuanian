@@ -22,4 +22,8 @@ jobs:
         with:
           node-version: '16.x'
       - run: npm ci
+          env:
+            TRANSLATION_KEY: ${{ secrets.TRANSLATION_KEY}}
+            REGION: ${{ secrets.REGION }}
       - run: npm start
+
