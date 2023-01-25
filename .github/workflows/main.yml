@@ -25,5 +25,6 @@ jobs:
           env:
             TRANSLATION_KEY: ${{ secrets.TRANSLATION_KEY}}
             REGION: ${{ secrets.REGION }}
+            TTS_KEY: ${{ secrets.TTS_KEY }}
       - run: npm start
 
