@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 const axios = require('axios').default;
 const language = require('../text_chooser.json');
-const languageCode = require('../language-codes.json');
 const { v4: uuidv4 } = require('uuid');
 require('dotenv').config();
 var sdk = require("microsoft-cognitiveservices-speech-sdk");
