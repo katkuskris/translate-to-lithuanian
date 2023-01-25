@@ -21,21 +21,21 @@ const deactivateButtons = () => {
     document.querySelector("#play-button").removeEventListener("click", playOutput)
 }
 
-const requestTTS = async (event, phrase) => {
-    event.preventDefault()
-    await fetch(`/tts`, {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ phrase: phrase })
-    })
-}
+// const requestTTS = async (event, phrase) => {
+//     event.preventDefault()
+//     await fetch(`/tts`, {
+//         method: "POST",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ phrase: phrase })
+//     })
+// }
 
 const requestTranslate = async (event) => {
     event.preventDefault()
     let phrase = document.querySelector("#transl-input").value
-    await fetch(`/translator`, {
+    await fetch(`/translate`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -46,8 +46,8 @@ const requestTranslate = async (event) => {
         .then(data => {
             let outputContainer = document.querySelector("#output-container")
             outputContainer.innerHTML = `<span class="translation-text">${data.translation}</span>`
-            requestTTS(event, data.translation)
-            activateButtons()
+            // requestTTS(event, data.translation)
+            // activateButtons()
         })
 }
 
